@@ -1,6 +1,12 @@
 <head>
   <meta charset="UTF-8">
-  <title>Drop Jekyll Theme</title>
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
   <!-- Normalize.css -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <!-- Font Awesome -->
@@ -9,4 +15,16 @@
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  
+  <meta name="viewpoint" content="width=device-width">
+
+  {% comment %}
+  <meta name="description" content="
+    {% if page.excerpt %}
+      {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
+    {% else %}
+      {{ site.description }}
+    {% endif %}
+  ">
+  {% endcomment %}
 </head>

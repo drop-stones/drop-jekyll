@@ -1,0 +1,169 @@
+---
+---
+
+@import "config";
+@import "mixins";
+@import "extends";
+@import "drop-jekyll";
+
+a {
+  color: $font-color-a;
+  &:hover {
+    color: $font-color-a-hover;
+  }
+}
+
+body {
+  color: $font-color;
+}
+
+h2 {
+  margin: 2em 0 1.5em 0;
+  font-size: 20px;
+
+  @include breakpoint() {
+    font-size: 24px;
+  }
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+details {
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+.container {
+  max-width: $container-width;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.copyright {
+  margin-bottom: 0;
+}
+
+.footer {
+  border-top: $border;
+  @include pad();
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.front-page {
+  @include pad();
+}
+
+.nav {
+  border-top: $border;
+  border-bottom: $border;
+
+  &_list {
+    @include resetlist();
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_item {
+    margin-right: 1em;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $font-color;
+      padding: 15px 10px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.page {
+  &_header {
+    border-bottom: $border;
+    @include pad();
+  }
+
+  &_title {
+    margin: 0;
+    font-size: 28px;
+
+    @include breakpoint() {
+      font-size: 40px;
+    }
+  }
+
+  &_description {
+    @extend %meta;
+  }
+
+  &_body {
+    @include pad();
+  }
+
+  &_date {
+    @extend %meta;
+  }
+}
+
+.site-title {
+  font-weight: bold;
+  padding: 4% 0;
+
+  @include breakpoint() {
+    font-size: 20px;
+  }
+
+  a {
+    color: $font-color;
+    text-decoration: none;
+  }
+}
+
+.pager {
+  @include pad();
+  display: flex;
+  flex-wrap: wrap;
+
+  &_item {
+    $pre: &;
+
+    a {
+      text-decoration: none;
+    }
+
+    &--prev {
+      @extend #{$pre};
+      margin-left: auto;
+    }
+
+    &--next {
+      @extend #{$pre};
+    }
+  }
+}
+
+.social-link {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_item {
+    font-size: 1.5em;
+
+    a {
+      color: #666;
+      display: block;
+      padding: 5px;
+    }
+  }
+}
