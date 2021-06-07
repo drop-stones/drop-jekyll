@@ -1,0 +1,23 @@
+title: Drop Jekyll
+description: >
+  drop-stones Jekyll Theme.
+
+baseurl: "/drop-jekyll"
+url: ""
+
+author:
+  name: drop-stones
+  email: shizukuishi.s.aa@m.titech.ac.jp
+  github: drop-stones
+
+sass:
+  style: expanded
+
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

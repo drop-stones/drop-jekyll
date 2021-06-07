@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer_container">
+      <p class="copyright"><small>&copy; 2021 {{ site.author.name }}</small></p>
+
+      <div class="social-link">
+        {% if site.author.github %}
+          <p class="social-link_item">
+            <a href="https://github.com/{{ site.author.github }}"><i class="fa fa-github"></i></a>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>
